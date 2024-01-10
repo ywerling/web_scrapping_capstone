@@ -1,3 +1,4 @@
+# this file is depreacted, was used to fill in the form from main.py this has been replaced by objects
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time

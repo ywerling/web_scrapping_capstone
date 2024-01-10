@@ -11,9 +11,11 @@ class Zillow():
         self.soup = BeautifulSoup(zillow_html, 'html.parser')
 
     def get_prices(self):
+        # prices are tagged with the attribute value property-card-price
         prices = self.soup.find_all(attrs={"data-test": "property-card-price"})
         price_list = []
         for price in prices:
+            # ensure that the prices follow the same format and remove unwanted characters
             price_list.append(f"${re.sub(r"[^0-9]", '', price.text.split()[0])}")
         return(price_list)
 

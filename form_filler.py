@@ -10,6 +10,7 @@ class Form_Filler():
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_experimental_option("detach", True)
 
+        #open the page in the browser
         self.driver = webdriver.Chrome(chrome_options)
         self.driver.get(GOOGLE_FORM_URL)
 
@@ -25,6 +26,7 @@ class Form_Filler():
         send_button = self.driver.find_element(By.CLASS_NAME, value="NPEfkd")
         send_button.click()
 
+        #allow some time for the next page to load after the button click
         time.sleep(1)
 
     def go_to_next_sheet(self):
